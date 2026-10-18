@@ -1,0 +1,17 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+.env
+.env.*
+.git/
+.gitignore
+.vscode/
+
+*firebase-adminsdk*.json
+firebase-key.json
+service-account*.json
+
+Dockerfile
+README.md

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <p class="eyebrow">CLOUD GAMING PROJECT</p>
+            <h1>Cloud Clicker<span>.</span></h1>
+            <p class="subtitle">How fast can you click?</p>
+        </header>
+
+        <section class="game-card">
+            <p class="section-label">CHOOSE DURATION</p>
+
+            <div class="duration-options" id="durationOptions">
+                <button class="duration-button" data-duration="5">5 sec</button>
+                <button class="duration-button selected" data-duration="10">10 sec</button>
+                <button class="duration-button" data-duration="15">15 sec</button>
+                <button class="duration-button custom-duration" id="customDurationButton">+</button>
+            </div>
+
+            <div id="customDurationPanel" hidden>
+                <label for="customDuration">Custom time (1–300 seconds)</label>
+                <div class="custom-duration-input">
+                    <input id="customDuration" type="number"
+                           min="1" max="300" step="1" placeholder="Enter seconds">
+                    <button id="applyCustomDuration" class="secondary">Apply</button>
+                </div>
+            </div>
+
+            <p id="selectedDurationText" class="duration-hint">
+                Selected: 10 seconds
+            </p>
+
+            <div class="stats">
+                <div>
+                    <p>YOUR SCORE</p>
+                    <h2 id="score">0</h2>
+                </div>
+                <div>
+                    <p>TIME LEFT</p>
+                    <h2 id="timer">10s</h2>
+                </div>
+            </div>
+
+            <button id="clickButton" class="click-button" disabled>
+                CLICK ME!
+            </button>
+
+            <p id="status">Enter your name and press Start!</p>
+
+            <input id="username" maxlength="20"
+                   placeholder="Enter your username"
+                   autocomplete="nickname">
+
+            <div class="actions">
+                <button id="startButton" class="primary">Start Game</button>
+                <button id="submitButton" class="secondary" disabled>
+                    Submit Score
+                </button>
+            </div>
+        </section>
+
+        <section class="leaderboard">
+            <div class="leaderboard-header">
+                <div>
+                    <p class="eyebrow">GLOBAL RANKINGS</p>
+                    <h2>Leaderboard</h2>
+                </div>
+                <button id="refreshButton" class="refresh">Refresh</button>
+            </div>
+
+            <label for="leaderboardDuration">Rankings for</label>
+            <select id="leaderboardDuration">
+                <option value="5">5 seconds</option>
+                <option value="10" selected>10 seconds</option>
+                <option value="15">15 seconds</option>
+                <option value="custom">Custom duration</option>
+            </select>
+
+            <div id="customLeaderboardPanel" hidden>
+                <label for="customLeaderboardDuration">
+                    Custom duration (seconds)
+                </label>
+                <input id="customLeaderboardDuration" type="number"
+                       min="1" max="300" step="1" placeholder="e.g. 20">
+                <button id="applyLeaderboardDuration" class="secondary">
+                    Show leaderboard
+                </button>
+            </div>
+
+            <ol id="leaderboardList">
+                <li>Loading leaderboard...</li>
+            </ol>
+        </section>
+
+        <footer>Built with Python & Google Cloud in mind.</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
